@@ -1,0 +1,37 @@
+<div>
+  <h3 class="prod-details">Available Products</h3>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 prod-details">
+    <ngx-datatable
+      class="material"
+      [rows]="products"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="25"
+      [rowHeight]="'auto'"
+      [limit]="10"
+    >
+      <ngx-datatable-column name="Product Name" prop="username">
+        <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+          <p>{{ row?.productName }}</p>
+        </ng-template>
+      </ngx-datatable-column>
+      ]<ngx-datatable-column name="Units" prop="firstname">
+      <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+        <p class="truncate-text">{{ row?.numberOfUnits }}</p>
+      </ng-template>
+    </ngx-datatable-column>
+      <ngx-datatable-column name="Price" prop="lastname">
+        <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+          <p class="truncate-text">{{ row?.price | number:'1.2-2' }}</p>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 prod-details">
+    <button class="pt-5" [routerLink]="['/calculator']">Price Calculator</button>
+  </div>
+</div>

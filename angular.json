@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "shopping-cart-ui": {
@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/less/bootstrap.less"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "shopping-cart-ui"
+    }
+  },
+  "defaultProject": "shopping-cart-ui",
+  "cli": {
+    "analytics": "7640cb83-3762-440f-9df7-27caf414e1e8"
+  }
 }

@@ -1,0 +1,47 @@
+<div>
+  <h3 class="calc">Price Calculator</h3>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 calc">
+    <form [formGroup]="form" class="form-group">
+      <div>
+        <div>Product</div>
+        <div>
+          <select formControlName="product" class="form-control" >
+            <option value="" [selected]="true">Please select a product</option>
+            <option *ngFor="let product of products;" [value]="product">{{ product }}</option>
+          </select>
+        </div>
+      </div>
+      <br/>
+      <div>
+        <div>Purchase Type</div>
+        <div>
+          <select formControlName="type" class="form-control">
+            <option value="" [selected]="true">Please select a type</option>
+            <option *ngFor="let type of types;" [value]="type">{{ type }}</option>
+          </select>
+        </div>
+      </div>
+      <br/>
+      <div>
+        <div>Number of Items</div>
+        <div>
+          <input type="number" formControlName="items" class="form-control" min="0"
+                 onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null :
+                        event.charCode >= 48 && event.charCode <= 57" onpaste="event.preventDefault();">
+        </div>
+      </div>
+      <br/>
+      <div>
+        <button (click)="calculate()">Submit</button>
+        <button (click)="clear()">Clear</button>
+        <button [routerLink]="['/products']">Back To Products</button>
+      </div>
+      <br/><br/>
+      <div>
+        <span>Total Price: <b>{{total | number:'1.2-2' }}</b></span>
+      </div>
+    </form>
+  </div>
+</div>
